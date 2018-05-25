@@ -1,0 +1,12 @@
+{
+  "name": "e-ling-api",
+  "version": "0.0.1",
+  "description": "A Express.js Based Project API Kit",
+  "author": "oppytut",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+	  "dev": "nodemon app.js",
+	  "start": "NODE_ENV=production node app.js"
+  }
+}
