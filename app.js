@@ -4,11 +4,22 @@ import Log from 'debug-logger';
 
 // Express App
 const app = express();
+// Database configuration
+const dbUsername = 'mz_eLingUser';
+const dbPassword = 'sandimz_eLingUser';
+const dbServer = '127.0.0.1';
+const dbPort = '17027';
+const dbName = 'mz_eLing';
+const dbURL = `mongodb://${dbUsername}:${dbPassword}@${dbServer}:${dbPort}/${dbName}`;
+mongoose.Promise = global.Promise;
+mongoose.connect(dbURL);
 
 // Debug
 const log = Log('app');
 
 // Root
+// Express app
+const app = express();
 app.get('/', (req, res) => {
 	log.info('GET /');
 
