@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "DEBUG=server,*trace,*debug,*log,*info,*warn,*error NODE_ENV=development webpack --watch --config ./webpack.dev.js",
+    "dev": "DEBUG=server,*trace,*debug,*log,*info,*warn,*error NODE_ENV=development webpack --config ./webpack.dev.js",
     "start": "NODE_ENV=production webpack --config ./webpack.prod.js && NODE_ENV=production node ./.build/app.js"
   },
   "devDependencies": {
