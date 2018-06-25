@@ -2,9 +2,9 @@ module.exports = {
     "extends": "airbnb-base",
     "rules": {
         "indent": ["error", "tab"],
-        "no-tabs": 0,
-        "keyword-spacing": [2, {"overrides": {"if": {"after": false}}}],
+        "no-tabs": "off",
         "no-console": ["error", {"allow": ["log"]}],
-        "comma-dangle": ["error", "never"]
+        "comma-dangle": ["error", "never"],
+        "no-shadow": "off"
     }
 };
