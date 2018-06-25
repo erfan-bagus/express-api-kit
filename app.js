@@ -1,43 +1,26 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import Log from 'debug-logger';
+import bodyParser from 'body-parser';
+// import debugLogger from 'debug-logger';
 
-// Express App
+import api from './api';
+import database from './configs/database';
+import cors from './configs/cors';
+import server from './configs/server';
+
+// const log = debugLogger('app');
 const app = express();
-// Database configuration
-const dbUsername = 'mz_eLingUser';
-const dbPassword = 'sandimz_eLingUser';
-const dbServer = '127.0.0.1';
-const dbPort = '17027';
-const dbName = 'mz_eLing';
-const dbURL = `mongodb://${dbUsername}:${dbPassword}@${dbServer}:${dbPort}/${dbName}`;
-mongoose.Promise = global.Promise;
-mongoose.connect(dbURL);
 
-// Debug
-const log = Log('app');
+database(); // configure database
 
-// Root
-// Express app
-const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+cors(app); // configure cors
+
+api(app); // add api
+
 app.get('/', (req, res) => {
-	log.info('GET /');
-
-	res.status(404).send("Sorry can't find that!");
+	res.status(404).send('Sorry, I am under constructions!');
 });
 
-// Listening
-const MODE = process.env.NODE_ENV;
-const PORT = 8000;
-
-app.listen(PORT, (err) => {
-	log.info('MODE:', MODE);
-	log.info('PORT:', PORT);
-
-	if(err) {
-		log.error('Express server failed to listen!');
-		throw err;
-	} else {
-		log.info('Express server listens!');
-	}
-});
+server(app); // start server
