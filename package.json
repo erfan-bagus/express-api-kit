@@ -1,7 +1,7 @@
 {
-  "name": "e-ling-api",
+  "name": "petuah-api-server",
   "version": "0.0.1",
-  "description": "A Express.js Based Project API Kit",
+  "description": "A Express.js Based API Project Kit",
   "author": "oppytut",
   "license": "MIT",
   "private": true,
