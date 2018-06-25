@@ -13,7 +13,7 @@ module.exports = merge.multiple(common, {
 		},
 		plugins: [
 			new ReloadServerPlugin({
-				script: './.build/app.js',
+				script: './.build/app.js'
 			})
 		]
 	}
