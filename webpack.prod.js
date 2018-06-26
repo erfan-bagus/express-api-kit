@@ -3,6 +3,6 @@ const common = require('./webpack.common.js');
 
 module.exports = merge.multiple(common, {
 	server: {
-		mode: 'production'
-	}
+		mode: 'production',
+	},
 });

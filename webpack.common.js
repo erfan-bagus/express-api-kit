@@ -7,7 +7,7 @@ module.exports = {
 		externals: [nodeExternals()],
 		output: {
 			path: path.resolve(__dirname, './.build'),
-			filename: './app.js'
-		}
-	}
+			filename: './app.js',
+		},
+	},
 };

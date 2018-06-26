@@ -4,7 +4,6 @@ module.exports = {
         "indent": ["error", "tab"],
         "no-tabs": "off",
         "no-console": ["error", {"allow": ["log"]}],
-        "comma-dangle": ["error", "never"],
-        "no-shadow": "off"
-    }
+        "no-shadow": "off",
+    },
 };

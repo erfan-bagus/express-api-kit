@@ -30,7 +30,7 @@ const quoteSanitizer = {
 
 		log.info('return sanitized inventor');
 		return item;
-	}
+	},
 };
 
 export default quoteSanitizer;

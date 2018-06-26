@@ -6,7 +6,7 @@ const corsOptions = (req, cb) => {
 	const options = {
 		origin: whiteList.indexOf(req.header('Origin')) !== -1,
 		optionsSuccessStatus: 200,
-		methods: ['GET', 'POST', 'PUT', 'DELETE']
+		methods: ['GET', 'POST', 'PUT', 'DELETE'],
 	};
 	cb(null, options);
 };

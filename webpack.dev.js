@@ -9,12 +9,12 @@ module.exports = merge.multiple(common, {
 		watch: true,
 		watchOptions: {
 			ignored: /node_modules/,
-			poll: true // resolve not automatic rebuild
+			poll: true, // resolve not automatic rebuild
 		},
 		plugins: [
 			new ReloadServerPlugin({
-				script: './.build/app.js'
-			})
-		]
-	}
+				script: './.build/app.js',
+			}),
+		],
+	},
 });

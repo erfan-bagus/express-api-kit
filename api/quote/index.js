@@ -6,7 +6,7 @@ import {
 	getQuote,
 	postQuote,
 	putQuote,
-	deleteQuote
+	deleteQuote,
 } from './operator';
 
 const log = debugLogger('quoteApi');

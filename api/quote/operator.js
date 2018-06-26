@@ -47,7 +47,7 @@ export const getQuote = ({ id }) => new Promise((resolve, reject) => {
 export const postQuote = ({ data }) => new Promise((resolve, reject) => {
 	const quote = new QuoteModel({ // create quote
 		content: sanitizer.content(data.content),
-		inventor: sanitizer.inventor(data.inventor)
+		inventor: sanitizer.inventor(data.inventor),
 	});
 
 	quote.save((err) => {
@@ -75,7 +75,7 @@ export const putQuote = ({ id, data }) => new Promise((resolve, reject) => {
 
 		QuoteModel.findByIdAndUpdate(id, update, {
 			new: true,
-			runValidators: true
+			runValidators: true,
 		}, (err, quote) => {
 			if (err) {
 				log.warn('return err, failed to update quote');
