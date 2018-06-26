@@ -7,8 +7,8 @@ const port = 8000;
 
 const server = (app) => {
 	app.listen(port, (err) => {
-		log.info('mode:', mode);
-		log.info('port:', port);
+		log.info(`mode: ${mode}`);
+		log.info(`port: ${port}`);
 
 		if (err) {
 			log.error('cannot be listening');
