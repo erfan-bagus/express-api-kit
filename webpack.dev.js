@@ -1,5 +1,4 @@
 const merge = require('webpack-merge');
-const path = require('path');
 const common = require('./webpack.common.js');
 const ReloadServerPlugin = require('reload-server-webpack-plugin'); // add an instant server for development mode and automatically reload feature
 
