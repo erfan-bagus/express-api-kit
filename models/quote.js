@@ -1,15 +1,11 @@
 import mongoose, { Schema } from 'mongoose';
 import validator from 'validator';
+import mongooseId from 'mongoose-id';
 import debugLogger from 'debug-logger';
 
+import removePunctuation from '../libs/remove-punctuation';
+
 const log = debugLogger('quoteModel');
-
-const removePunctuation = (item) => {
-	const punctuation = [' ', '.', ',', ';', ':', '?', '!', '.', "'", '"', '(', ')', '/', '[', '-']; // dash character must be the last element
-	const closedBracket = ']'; // closed bracket not supported by validator.js blacklist
-
-	return validator.blacklist(item.replace(closedBracket, ''), punctuation);
-};
 
 const quoteSchema = new Schema(
 	{
@@ -71,6 +67,8 @@ const quoteSchema = new Schema(
 		toJSON: { virtuals: false },
 	},
 );
+
+quoteSchema.plugin(mongooseId);
 
 const QuoteModel = mongoose.model('Quote', quoteSchema);
 
