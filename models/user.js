@@ -68,6 +68,15 @@ const userSchema = new Schema(
 					},
 					message: 'Must only use letters, numbers and password special characters by owasp except space and backslash!',
 				},
+				{
+					validator: (v) => {
+						const isValid = validator.isLength(v, { min: 8, max: 20 });
+
+						log.info(`return username validation length result, ${isValid}`);
+						return isValid;
+					},
+					message: 'Must be between 8 and 20 characters!',
+				},
 			],
 		},
 	},
