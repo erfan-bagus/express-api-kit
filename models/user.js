@@ -78,7 +78,9 @@ const userSchema = new Schema(
 );
 
 userSchema.plugin(mongooseId);
-userSchema.plugin(uniqueValidator);
+userSchema.plugin(uniqueValidator, {
+	message: 'Already used by others!',
+});
 
 const UserModel = mongoose.model('User', userSchema);
 
