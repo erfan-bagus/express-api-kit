@@ -5,6 +5,7 @@ import QuoteModel from '../../models/quote';
 import sanitizer from './sanitizer';
 
 const log = debugLogger('quoteOperator');
+const quoteItem = ['content', 'inventor'];
 
 export const getQuotes = () => new Promise((resolve, reject) => {
 	QuoteModel.find().exec((err, quote) => {
