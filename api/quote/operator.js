@@ -46,10 +46,13 @@ export const getQuote = ({ id }) => new Promise((resolve, reject) => {
 });
 
 export const postQuote = ({ data }) => new Promise((resolve, reject) => {
-	const quote = new QuoteModel({ // create quote
-		content: sanitizer.content(data.content),
-		inventor: sanitizer.inventor(data.inventor),
+	const d = {};
+
+	quoteItem.forEach((item) => {
+		d[item] = sanitizer[item](data[item]);
 	});
+
+	const quote = new QuoteModel(d);
 
 	quote.save((err) => {
 		if (err) {
@@ -64,30 +67,33 @@ export const postQuote = ({ data }) => new Promise((resolve, reject) => {
 
 export const putQuote = ({ id, data }) => new Promise((resolve, reject) => {
 	if (validator.isMongoId(id)) {
-		const update = {};
-
-		if (!isEmpty(data.content)) {
-			update.content = sanitizer.content(data.content);
-		}
-
-		if (!isEmpty(data.inventor)) {
-			update.inventor = sanitizer.inventor(data.inventor);
-		}
-
-		QuoteModel.findByIdAndUpdate(id, update, {
+		QuoteModel.findByIdAndUpdate(id, {
 			new: true,
 			runValidators: true,
-		}, (err, quote) => {
+		}, (err, q) => {
 			if (err) {
 				log.warn('return err, failed to update quote');
 				reject(err);
 			} else {
-				if (isEmpty(quote)) {
-					log.warn('return null quote');
-				} else {
-					log.info('return updated quote');
-				}
-				resolve(quote);
+				const quote = q;
+
+				quoteItem.forEach((item) => {
+					if (!isEmpty(data[item])) quote[item] = sanitizer[item](data[item]);
+				});
+
+				quote.save((err, q) => {
+					if (err) {
+						log.warn('return err, failed to update quote');
+						reject(err);
+					} else {
+						if (isEmpty(q)) {
+							log.warn('return null quote');
+						} else {
+							log.info('return updated quote');
+						}
+						resolve(q);
+					}
+				});
 			}
 		});
 	} else {
