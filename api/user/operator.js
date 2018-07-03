@@ -127,3 +127,31 @@ export const deleteUser = ({ id }) => new Promise((resolve, reject) => {
 		reject(err);
 	}
 });
+
+export const getUsersBy = ({
+	query,
+	field,
+	populate = [],
+	limit = 0,
+}) => new Promise((resolve, reject) => {
+	UserModel.find(query, field)
+		.populate(populate)
+		.limit(limit)
+		.exec((err, user) => {
+			if (err) {
+				log.warn('return err, failed to obtain users');
+				reject(err);
+			} else {
+				if (isEmpty(user)) {
+					log.warn('return null user');
+				} else {
+					log.info('return obtained users');
+				}
+				resolve(user);
+			}
+		});
+});
+
+// export const putUsersBy
+
+// export const delUsersBy
