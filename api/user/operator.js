@@ -55,13 +55,13 @@ export const postUser = ({ data }) => new Promise((resolve, reject) => {
 
 	const user = new UserModel(d);
 
-	user.save((err) => {
+	user.save((err, u) => {
 		if (err) {
-			log.warn('return err, failed to create user');
+			log.warn('return err, failed to create user', err);
 			reject(err);
 		} else {
 			log.info('return created user');
-			resolve(user);
+			resolve(u);
 		}
 	});
 });

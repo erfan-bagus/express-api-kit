@@ -54,13 +54,13 @@ export const postQuote = ({ data }) => new Promise((resolve, reject) => {
 
 	const quote = new QuoteModel(d);
 
-	quote.save((err) => {
+	quote.save((err, q) => {
 		if (err) {
 			log.warn('return err, failed to create quote');
 			reject(err);
 		} else {
 			log.info('return created quote');
-			resolve(quote);
+			resolve(q);
 		}
 	});
 });
