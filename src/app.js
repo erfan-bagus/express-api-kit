@@ -3,9 +3,9 @@ import bodyParser from 'body-parser';
 // import debugLogger from 'debug-logger';
 
 import api from './api';
-import database from './configs/database';
-import cors from './configs/cors';
-import server from './configs/server';
+import database from '../configs/database';
+import cors from '../configs/cors';
+import server from '../configs/server';
 
 // const log = debugLogger('app');
 const app = express();

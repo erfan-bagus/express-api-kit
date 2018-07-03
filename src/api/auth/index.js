@@ -6,7 +6,7 @@ import isEmpty from 'is-empty';
 
 import { postUser, getUsersBy } from '../user/operator';
 
-import jwtConfig from '../../configs/jwt';
+import jwtConfig from '../../../configs/jwt';
 
 const log = debugLogger('authApi');
 const router = express.Router();

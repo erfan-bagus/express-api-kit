@@ -3,7 +3,7 @@ const nodeExternals = require('webpack-node-externals'); // be required Express.
 
 module.exports = {
 	server: {
-		entry: './app.js',
+		entry: './src/app.js',
 		externals: [nodeExternals()],
 		output: {
 			path: path.resolve(__dirname, './.build'),

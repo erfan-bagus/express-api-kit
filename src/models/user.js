@@ -5,9 +5,9 @@ import mongooseId from 'mongoose-id';
 import debugLogger from 'debug-logger';
 import bcrypt from 'bcrypt';
 
-import bcryptConfig from '../configs/bcrypt';
+import bcryptConfig from '../../configs/bcrypt';
 
-import { removePassChar } from '../libs/remove-punctuation';
+import { removePassChar } from '../helpers/remove-punctuation';
 
 const log = debugLogger('userModel');
 

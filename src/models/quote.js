@@ -3,7 +3,7 @@ import validator from 'validator';
 import mongooseId from 'mongoose-id';
 import debugLogger from 'debug-logger';
 
-import removePunctuation from '../libs/remove-punctuation';
+import removePunctuation from '../helpers/remove-punctuation';
 
 const log = debugLogger('quoteModel');
 
