@@ -65,6 +65,7 @@ const bcryptConfig = {
   saltRounds: 10,
 };
 ```
+
 ## Demo
 A demo can be accessed on <code>https://exa.mazovi.com/api/ ... (GET/POST/PUT/DELETE)</code>.
 
