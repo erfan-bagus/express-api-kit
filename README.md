@@ -75,3 +75,4 @@ A demo can be accessed on <code>https://exa.mazovi.com/api/ ... (GET/POST/PUT/DE
 - [ ] Add GraphQL and Apollo Server
 - [ ] Add Redis
 - [ ] Publish helpers to NPM
+- [ ] Testing
