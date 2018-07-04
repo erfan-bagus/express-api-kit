@@ -19,7 +19,7 @@ For production mode:
 ```bash
 npm run start
 ```
-##### Access http://localhost:3000 through the browser
+##### Access http://localhost:8000 through the browser
 
 ## Configuration
 The configuration files are in the configs directory.
