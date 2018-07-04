@@ -11,7 +11,7 @@ git clone https://github.com/oppytut/express-api-kit.git && cd express-api-kit
 npm install
 ```
 ##### Run
-For development mode with webpack watch:
+For development mode with Webpack watch:
 ```bash
 npm run dev
 ```
