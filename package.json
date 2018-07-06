@@ -6,9 +6,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "DEBUG=server,*trace,*debug,*log,*info,*warn,*error NODE_ENV=development webpack --config ./webpack.dev.js",
-    "build": "NODE_ENV=production webpack --config ./webpack.prod.js",
-    "start": "NODE_ENV=production webpack --config ./webpack.prod.js && NODE_ENV=production node ./.build/app.js"
+    "dev": "DEBUG=server,*trace,*debug,*log,*info,*warn,*error webpack --config ./webpack.dev.js",
+    "build": "webpack --config ./webpack.prod.js",
+    "start": "webpack --config ./webpack.prod.js && node ./.build/app.js"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
