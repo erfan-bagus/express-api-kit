@@ -11,7 +11,7 @@ git clone https://github.com/oppytut/express-api-kit.git && cd express-api-kit
 npm install
 ```
 ##### Run
-For development mode with webpack watch:
+For development mode with Webpack watch:
 ```bash
 npm run dev
 ```
@@ -19,7 +19,7 @@ For production mode:
 ```bash
 npm run start
 ```
-##### Access http://localhost:3000 through the browser
+##### Access http://localhost:8000 through the browser
 
 ## Configuration
 The configuration files are in the configs directory.
@@ -65,6 +65,7 @@ const bcryptConfig = {
   saltRounds: 10,
 };
 ```
+
 ## Demo
 A demo can be accessed on <code>https://exa.mazovi.com/api/ ... (GET/POST/PUT/DELETE)</code>.
 
@@ -74,3 +75,4 @@ A demo can be accessed on <code>https://exa.mazovi.com/api/ ... (GET/POST/PUT/DE
 - [ ] Add GraphQL and Apollo Server
 - [ ] Add Redis
 - [ ] Publish helpers to NPM
+- [ ] Testing
