@@ -3,11 +3,11 @@ import debugLogger from 'debug-logger';
 
 const log = debugLogger('database');
 
-const username = 'mz_petuahUser';
-const password = 'sandimz_petuahUser';
+const username = 'mamas';
+const password = 'sandinemamas';
 const host = '127.0.0.1';
-const port = '17027';
-const name = 'mz_petuah';
+const port = '27017';
+const name = 'ms_petuah';
 const url = `mongodb://${username}:${password}@${host}:${port}/${name}`;
 
 const database = () => {
